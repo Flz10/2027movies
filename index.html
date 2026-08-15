@@ -8,17 +8,13 @@
 
 <style>
 :root {
-    --bg: #070b14;
-    --bg2: #0d1422;
-    --card: #111a2a;
-    --card2: #172238;
+    --bg: #05070c;
+    --bg2: #0b1019;
+    --text: #f5f0e6;
+    --muted: #929bad;
     --gold: #d8b45a;
-    --gold2: #f2d98b;
-    --text: #f5eddf;
-    --muted: #9ca8bb;
-    --line: #27344b;
-    --green: #79d6a3;
-    --red: #c96b6b;
+    --line: #252e3e;
+    --card: #0e1522;
 }
 
 * {
@@ -31,59 +27,57 @@ html {
 
 body {
     margin: 0;
-    min-height: 100vh;
     background:
-        radial-gradient(circle at 50% -10%, #263957 0%, transparent 42%),
-        linear-gradient(180deg, #080d18 0%, #050810 100%);
+        radial-gradient(circle at 50% -10%, #1b2940 0%, transparent 40%),
+        linear-gradient(180deg, #070a11 0%, #03050a 100%);
     color: var(--text);
     font-family: Arial, Helvetica, sans-serif;
 }
 
-/* =========================
+/* =========================================
    HEADER
-========================= */
+========================================= */
 
 header {
-    text-align: center;
-    padding: 55px 20px 40px;
-    border-bottom: 1px solid var(--line);
     position: relative;
     overflow: hidden;
+    text-align: center;
+    padding: 65px 20px 50px;
+    border-bottom: 1px solid var(--line);
 }
 
-header::before {
+header:before {
     content: "✦";
     position: absolute;
-    left: 10%;
-    top: 35px;
-    color: var(--gold);
-    opacity: .35;
-    font-size: 30px;
-}
-
-header::after {
-    content: "✦";
-    position: absolute;
-    right: 10%;
-    top: 65px;
-    color: var(--gold);
+    left: 12%;
+    top: 50px;
+    color: #d8b45a;
     opacity: .25;
+    font-size: 28px;
+}
+
+header:after {
+    content: "✦";
+    position: absolute;
+    right: 12%;
+    top: 80px;
+    color: #d8b45a;
+    opacity: .2;
     font-size: 20px;
 }
 
 .eyebrow {
     color: var(--gold);
-    font-size: 12px;
-    font-weight: bold;
+    font-size: 11px;
+    font-weight: 800;
     letter-spacing: 5px;
 }
 
-.title {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(38px, 7vw, 78px);
-    line-height: 1;
+h1 {
     margin: 18px 0 12px;
-    text-shadow: 0 0 30px rgba(216,180,90,.15);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(40px, 7vw, 78px);
+    line-height: .95;
 }
 
 .subtitle {
@@ -91,56 +85,53 @@ header::after {
     font-size: 15px;
 }
 
-/* =========================
+/* =========================================
    MAIN
-========================= */
+========================================= */
 
 main {
-    width: min(1180px, calc(100% - 30px));
+    width: min(1150px, calc(100% - 30px));
     margin: auto;
     padding: 30px 0 80px;
 }
 
-/* =========================
+/* =========================================
    STATS
-========================= */
+========================================= */
 
 .stats {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 14px;
-    margin-bottom: 20px;
 }
 
 .stat {
-    background: linear-gradient(145deg, var(--card2), var(--card));
-    border: 1px solid var(--line);
-    border-radius: 18px;
     padding: 20px;
     text-align: center;
-    box-shadow: 0 10px 35px rgba(0,0,0,.2);
+    background: linear-gradient(145deg, #111a2a, #0b111c);
+    border: 1px solid var(--line);
+    border-radius: 18px;
 }
 
 .stat-number {
     display: block;
     color: var(--gold);
-    font-size: 25px;
+    font-size: 26px;
     font-weight: bold;
-    margin-bottom: 5px;
 }
 
 .stat-label {
     color: var(--muted);
-    font-size: 11px;
+    font-size: 10px;
     letter-spacing: 2px;
 }
 
-/* =========================
+/* =========================================
    PROGRESS
-========================= */
+========================================= */
 
-.progress-wrapper {
-    margin: 20px 0 35px;
+.progress-wrap {
+    margin: 22px 0 40px;
 }
 
 .progress-info {
@@ -153,189 +144,290 @@ main {
 
 .progress {
     height: 11px;
-    background: #202b3d;
-    border-radius: 100px;
     overflow: hidden;
+    border-radius: 100px;
+    background: #202938;
 }
 
 .progress-bar {
-    height: 100%;
     width: 0%;
+    height: 100%;
+    border-radius: 100px;
     background: linear-gradient(
         90deg,
-        var(--gold),
-        var(--gold2)
+        #b78e39,
+        #f2d98b
     );
-    border-radius: 100px;
     transition: width .5s ease;
-    box-shadow: 0 0 15px rgba(216,180,90,.3);
 }
 
-/* =========================
-   MONTH
-========================= */
+/* =========================================
+   MONTH BLOCK
+========================================= */
 
-.month-title {
-    margin: 42px 0 14px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid var(--line);
-    color: var(--gold);
+.month-block {
+    margin: 35px 0;
+    padding: 25px;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(18,25,38,.95),
+            rgba(7,11,18,.95)
+        );
+    border: 1px solid #293346;
+    border-radius: 24px;
+    box-shadow: 0 15px 50px rgba(0,0,0,.25);
+}
+
+.month-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 22px;
+}
+
+.month-name {
+    margin: 0;
     font-family: Georgia, serif;
-    font-size: 25px;
+    font-size: 31px;
 }
 
-/* =========================
-   MOVIE ROW
-========================= */
+.month-count {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* =========================================
+   FRANCHISE BLOCK
+========================================= */
+
+.franchise-block {
+    margin: 16px 0;
+    overflow: hidden;
+
+    border: 1px solid var(--franchise-border);
+    border-radius: 17px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--franchise-bg),
+            rgba(5,8,13,.95)
+        );
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.04),
+        0 8px 30px rgba(0,0,0,.15);
+}
+
+.franchise-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 15px 18px;
+
+    border-bottom: 1px solid var(--franchise-border);
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--franchise-accent-soft),
+            transparent
+        );
+}
+
+.franchise-icon {
+    width: 35px;
+    height: 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: var(--franchise-accent-soft);
+    color: var(--franchise-accent);
+
+    font-size: 18px;
+}
+
+.franchise-name {
+    color: var(--franchise-accent);
+    font-size: 13px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.franchise-films {
+    color: var(--muted);
+    margin-left: auto;
+    font-size: 11px;
+}
+
+/* =========================================
+   MOVIE
+========================================= */
 
 .movie {
     display: grid;
-    grid-template-columns: 45px 105px 1fr 70px;
-    gap: 12px;
+    grid-template-columns: 42px 105px 1fr 70px;
     align-items: center;
-
-    background: rgba(17,26,42,.92);
-    border: 1px solid var(--line);
-    border-radius: 13px;
+    gap: 12px;
 
     padding: 12px 15px;
-    margin: 7px 0;
+
+    border-bottom: 1px solid rgba(255,255,255,.045);
 
     transition:
-        transform .15s ease,
-        border-color .15s ease,
-        opacity .2s ease;
+        background .15s ease,
+        transform .15s ease;
+}
+
+.movie:last-child {
+    border-bottom: none;
 }
 
 .movie:hover {
-    transform: translateY(-2px);
-    border-color: #435575;
+    background: rgba(255,255,255,.035);
 }
 
 .movie.watched {
-    opacity: .55;
-    background: rgba(14,29,24,.9);
+    opacity: .48;
 }
 
 .movie.watched .movie-title {
     text-decoration: line-through;
 }
 
-/* =========================
+/* =========================================
    CHECKBOX
-========================= */
+========================================= */
 
 .checkbox {
-    width: 23px;
-    height: 23px;
+    width: 22px;
+    height: 22px;
+
     cursor: pointer;
-    accent-color: var(--gold);
+
+    accent-color: var(--franchise-accent);
 }
 
-/* =========================
+/* =========================================
    DATE
-========================= */
+========================================= */
 
 .date {
     color: var(--muted);
-    font-size: 13px;
-    white-space: nowrap;
+    font-size: 12px;
 }
 
-/* =========================
-   MOVIE INFO
-========================= */
-
-.franchise {
-    color: var(--gold);
-    font-size: 10px;
-    font-weight: bold;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-}
+/* =========================================
+   TITLE
+========================================= */
 
 .movie-title {
-    color: var(--text);
-    font-weight: 600;
     font-size: 15px;
-    margin-top: 4px;
+    font-weight: 650;
 }
 
-/* =========================
+/* =========================================
    RATING
-========================= */
+========================================= */
 
 .rating {
-    width: 65px;
-    background: #080e19;
-    border: 1px solid var(--line);
-    border-radius: 8px;
+    width: 62px;
 
     padding: 7px;
 
     color: var(--text);
     text-align: center;
 
+    background: rgba(0,0,0,.35);
+    border: 1px solid var(--franchise-border);
+    border-radius: 8px;
+
     outline: none;
 }
 
 .rating:focus {
-    border-color: var(--gold);
+    border-color: var(--franchise-accent);
 }
 
 .rating::placeholder {
-    color: #66738a;
+    color: #657085;
 }
 
-/* =========================
-   BUTTON
-========================= */
+/* =========================================
+   RESET
+========================================= */
 
 .reset {
     display: block;
 
-    margin: 40px auto 0;
+    margin: 45px auto 0;
 
-    background: transparent;
+    padding: 10px 18px;
+
     color: var(--muted);
+    background: transparent;
 
     border: 1px solid var(--line);
-    border-radius: 8px;
-
-    padding: 9px 16px;
+    border-radius: 9px;
 
     cursor: pointer;
 }
 
 .reset:hover {
-    color: var(--text);
+    color: white;
     border-color: var(--gold);
 }
 
-/* =========================
+/* =========================================
    FOOTER
-========================= */
+========================================= */
 
 footer {
+    padding: 30px;
     text-align: center;
+
     color: var(--muted);
-    padding: 25px;
+
     border-top: 1px solid var(--line);
+
     font-size: 13px;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+/* =========================================
+   MOBILE
+========================================= */
 
 @media (max-width: 700px) {
+
+    main {
+        width: calc(100% - 18px);
+    }
 
     .stats {
         grid-template-columns: 1fr;
     }
 
+    .month-block {
+        padding: 15px;
+    }
+
+    .month-header {
+        align-items: flex-start;
+    }
+
+    .month-name {
+        font-size: 25px;
+    }
+
     .movie {
-        grid-template-columns: 35px 75px 1fr;
+        grid-template-columns: 32px 70px 1fr;
     }
 
     .rating {
@@ -343,11 +435,11 @@ footer {
     }
 
     .date {
-        font-size: 11px;
+        font-size: 10px;
     }
 
     .movie-title {
-        font-size: 14px;
+        font-size: 13px;
     }
 }
 </style>
@@ -361,7 +453,7 @@ footer {
         14 APRIL — 14 AUGUST • 2027
     </div>
 
-    <h1 class="title">
+    <h1>
         🎬 THE GREAT<br>
         MOVIE MARATHON
     </h1>
@@ -375,14 +467,12 @@ footer {
 
 <main>
 
-    <!-- =========================
-         STATS
-    ========================== -->
-
     <div class="stats">
 
         <div class="stat">
-            <span class="stat-number" id="watchedCount">
+            <span
+                class="stat-number"
+                id="watched">
                 0 / 123
             </span>
 
@@ -391,9 +481,10 @@ footer {
             </span>
         </div>
 
-
         <div class="stat">
-            <span class="stat-number" id="percentage">
+            <span
+                class="stat-number"
+                id="percentage">
                 0%
             </span>
 
@@ -402,9 +493,10 @@ footer {
             </span>
         </div>
 
-
         <div class="stat">
-            <span class="stat-number" id="average">
+            <span
+                class="stat-number"
+                id="average">
                 —
             </span>
 
@@ -416,11 +508,7 @@ footer {
     </div>
 
 
-    <!-- =========================
-         PROGRESS
-    ========================== -->
-
-    <div class="progress-wrapper">
+    <div class="progress-wrap">
 
         <div class="progress-info">
 
@@ -446,10 +534,6 @@ footer {
     </div>
 
 
-    <!-- =========================
-         MOVIES
-    ========================== -->
-
     <div id="schedule"></div>
 
 
@@ -474,111 +558,274 @@ footer {
 <script>
 
 /* =========================================================
-   MOVIE LIST
+   FRANCHISE DATA
+========================================================= */
+
+const franchiseStyles = {
+
+    "Back to the Future": {
+        icon: "⚡",
+        accent: "#f1c40f",
+        bg: "rgba(55,45,12,.45)",
+        soft: "rgba(241,196,15,.12)",
+        border: "rgba(241,196,15,.35)"
+    },
+
+    "Transformers": {
+        icon: "🤖",
+        accent: "#4aa8ff",
+        bg: "rgba(15,50,90,.48)",
+        soft: "rgba(74,168,255,.12)",
+        border: "rgba(74,168,255,.35)"
+    },
+
+    "Planet of the Apes": {
+        icon: "🦍",
+        accent: "#b87843",
+        bg: "rgba(62,38,20,.5)",
+        soft: "rgba(184,120,67,.12)",
+        border: "rgba(184,120,67,.35)"
+    },
+
+    "Men in Black": {
+        icon: "🕶️",
+        accent: "#bfc8d6",
+        bg: "rgba(30,35,43,.55)",
+        soft: "rgba(191,200,214,.1)",
+        border: "rgba(191,200,214,.3)"
+    },
+
+    "Pirates of the Caribbean": {
+        icon: "🏴‍☠️",
+        accent: "#d6a84b",
+        bg: "rgba(52,36,13,.55)",
+        soft: "rgba(214,168,75,.12)",
+        border: "rgba(214,168,75,.35)"
+    },
+
+    "Pixar": {
+        icon: "🔴",
+        accent: "#4db7ff",
+        bg: "rgba(20,60,100,.45)",
+        soft: "rgba(77,183,255,.12)",
+        border: "rgba(77,183,255,.35)"
+    },
+
+    "MCU": {
+        icon: "🦸",
+        accent: "#e23636",
+        bg: "rgba(85,18,18,.48)",
+        soft: "rgba(226,54,54,.12)",
+        border: "rgba(226,54,54,.35)"
+    },
+
+    "Star Wars": {
+        icon: "⚔️",
+        accent: "#ffe27a",
+        bg: "rgba(45,45,35,.5)",
+        soft: "rgba(255,226,122,.12)",
+        border: "rgba(255,226,122,.35)"
+    },
+
+    "Harry Potter": {
+        icon: "⚡",
+        accent: "#c9a34e",
+        bg: "rgba(54,20,28,.5)",
+        soft: "rgba(201,163,78,.12)",
+        border: "rgba(201,163,78,.35)"
+    },
+
+    "The Hobbit": {
+        icon: "🧙",
+        accent: "#78a85b",
+        bg: "rgba(26,52,25,.5)",
+        soft: "rgba(120,168,91,.12)",
+        border: "rgba(120,168,91,.35)"
+    },
+
+    "The Lord of the Rings": {
+        icon: "💍",
+        accent: "#d3ae5c",
+        bg: "rgba(43,39,20,.52)",
+        soft: "rgba(211,174,92,.12)",
+        border: "rgba(211,174,92,.35)"
+    },
+
+    "Top Gun": {
+        icon: "✈️",
+        accent: "#5da9d6",
+        bg: "rgba(20,46,65,.55)",
+        soft: "rgba(93,169,214,.12)",
+        border: "rgba(93,169,214,.35)"
+    },
+
+    "Maze Runner": {
+        icon: "🏃",
+        accent: "#d9823b",
+        bg: "rgba(65,32,15,.5)",
+        soft: "rgba(217,130,59,.12)",
+        border: "rgba(217,130,59,.35)"
+    },
+
+    "The Hunger Games": {
+        icon: "🏹",
+        accent: "#d94b35",
+        bg: "rgba(69,20,16,.52)",
+        soft: "rgba(217,75,53,.12)",
+        border: "rgba(217,75,53,.35)"
+    },
+
+    "Twilight": {
+        icon: "🌙",
+        accent: "#c6c0d9",
+        bg: "rgba(37,34,54,.58)",
+        soft: "rgba(198,192,217,.11)",
+        border: "rgba(198,192,217,.32)"
+    },
+
+    "Wildcard": {
+        icon: "🎬",
+        accent: "#a8b2c4",
+        bg: "rgba(35,40,50,.45)",
+        soft: "rgba(168,178,196,.1)",
+        border: "rgba(168,178,196,.25)"
+    }
+
+};
+
+
+/* =========================================================
+   MOVIES
 ========================================================= */
 
 const movies = [
 
-/* =========================
+/* =========================================
    APRIL
-========================= */
+========================================= */
+
+/* BACK TO THE FUTURE */
 
 ["2027-04-14","Back to the Future","Back to the Future"],
 ["2027-04-15","Back to the Future","Back to the Future Part II"],
 ["2027-04-16","Back to the Future","Back to the Future Part III"],
 
-["2027-04-17","Men in Black","Men in Black"],
-["2027-04-18","Men in Black","Men in Black II"],
-["2027-04-19","Men in Black","Men in Black 3"],
+/* TRANSFORMERS */
 
-["2027-04-20","Indiana Jones","Raiders of the Lost Ark"],
-["2027-04-21","Indiana Jones","Temple of Doom"],
-["2027-04-22","Indiana Jones","The Last Crusade"],
-["2027-04-23","Indiana Jones","Kingdom of the Crystal Skull"],
-["2027-04-24","Indiana Jones","Dial of Destiny"],
+["2027-04-17","Transformers","Transformers"],
+["2027-04-18","Transformers","Revenge of the Fallen"],
+["2027-04-19","Transformers","Dark of the Moon"],
+["2027-04-20","Transformers","Age of Extinction"],
+["2027-04-21","Transformers","The Last Knight"],
+["2027-04-22","Transformers","Bumblebee"],
+["2027-04-23","Transformers","Rise of the Beasts"],
 
-["2027-04-25","Planet of the Apes","Rise of the Planet of the Apes"],
-["2027-04-26","Planet of the Apes","Dawn of the Planet of the Apes"],
-["2027-04-27","Planet of the Apes","War for the Planet of the Apes"],
-["2027-04-28","Planet of the Apes","Kingdom of the Planet of the Apes"],
+/* PLANET OF THE APES */
 
-["2027-04-29","Pirates of the Caribbean","The Curse of the Black Pearl"],
-["2027-04-30","Pirates of the Caribbean","Dead Man's Chest"],
+["2027-04-24","Planet of the Apes","Rise of the Planet of the Apes"],
+["2027-04-25","Planet of the Apes","Dawn of the Planet of the Apes"],
+["2027-04-26","Planet of the Apes","War for the Planet of the Apes"],
+["2027-04-27","Planet of the Apes","Kingdom of the Planet of the Apes"],
 
-/* =========================
+/* MEN IN BLACK */
+
+["2027-04-28","Men in Black","Men in Black"],
+["2027-04-29","Men in Black","Men in Black II"],
+["2027-04-30","Men in Black","Men in Black 3"],
+
+
+/* =========================================
    MAY
-========================= */
+========================================= */
 
-["2027-05-01","Pirates of the Caribbean","At World's End"],
-["2027-05-02","Pirates of the Caribbean","On Stranger Tides"],
-["2027-05-03","Pirates of the Caribbean","Dead Men Tell No Tales"],
+/* PIRATES */
+
+["2027-05-01","Pirates of the Caribbean","The Curse of the Black Pearl"],
+["2027-05-02","Pirates of the Caribbean","Dead Man's Chest"],
+["2027-05-03","Pirates of the Caribbean","At World's End"],
+["2027-05-04","Pirates of the Caribbean","On Stranger Tides"],
+["2027-05-05","Pirates of the Caribbean","Dead Men Tell No Tales"],
 
 /* PIXAR */
 
-["2027-05-04","Pixar","Toy Story"],
-["2027-05-05","Pixar","A Bug's Life"],
-["2027-05-06","Pixar","Toy Story 2"],
-["2027-05-07","Pixar","Monsters, Inc."],
-["2027-05-08","Pixar","Finding Nemo"],
-["2027-05-09","Pixar","The Incredibles"],
-["2027-05-10","Pixar","Cars"],
-["2027-05-11","Pixar","Ratatouille"],
-["2027-05-12","Pixar","WALL-E"],
-["2027-05-13","Pixar","Up"],
-["2027-05-14","Pixar","Toy Story 3"],
-["2027-05-15","Pixar","Cars 2"],
-["2027-05-16","Pixar","Brave"],
-["2027-05-17","Pixar","Monsters University"],
+["2027-05-06","Pixar","Toy Story"],
+["2027-05-07","Pixar","A Bug's Life"],
+["2027-05-08","Pixar","Toy Story 2"],
+["2027-05-09","Pixar","Monsters, Inc."],
+["2027-05-10","Pixar","Finding Nemo"],
+["2027-05-11","Pixar","The Incredibles"],
+["2027-05-12","Pixar","Cars"],
+["2027-05-13","Pixar","Ratatouille"],
+["2027-05-14","Pixar","WALL-E"],
+["2027-05-15","Pixar","Up"],
+["2027-05-16","Pixar","Toy Story 3"],
+["2027-05-17","Pixar","Cars 2"],
+["2027-05-18","Pixar","Brave"],
+["2027-05-19","Pixar","Monsters University"],
 
-/* =========================
-   MCU
-========================= */
+/* MCU — STARTS IN MAY */
 
-["2027-05-18","MCU","Iron Man"],
-["2027-05-19","MCU","The Incredible Hulk"],
-["2027-05-20","MCU","Iron Man 2"],
-["2027-05-21","MCU","Thor"],
-["2027-05-22","MCU","Captain America: The First Avenger"],
-["2027-05-23","MCU","The Avengers"],
-["2027-05-24","MCU","Iron Man 3"],
-["2027-05-25","MCU","Thor: The Dark World"],
-["2027-05-26","MCU","Captain America: The Winter Soldier"],
-["2027-05-27","MCU","Guardians of the Galaxy"],
-["2027-05-28","MCU","Avengers: Age of Ultron"],
-["2027-05-29","MCU","Ant-Man"],
-["2027-05-30","MCU","Captain America: Civil War"],
-["2027-05-31","MCU","Doctor Strange"],
+["2027-05-20","MCU","Iron Man"],
+["2027-05-21","MCU","The Incredible Hulk"],
+["2027-05-22","MCU","Iron Man 2"],
+["2027-05-23","MCU","Thor"],
+["2027-05-24","MCU","Captain America: The First Avenger"],
+["2027-05-25","MCU","The Avengers"],
+["2027-05-26","MCU","Iron Man 3"],
+["2027-05-27","MCU","Thor: The Dark World"],
+["2027-05-28","MCU","Captain America: The Winter Soldier"],
+["2027-05-29","MCU","Guardians of the Galaxy"],
+["2027-05-30","MCU","Avengers: Age of Ultron"],
+["2027-05-31","MCU","Ant-Man"],
 
-/* =========================
+
+/* =========================================
    JUNE
-========================= */
+========================================= */
 
-["2027-06-01","MCU","Guardians of the Galaxy Vol. 2"],
-["2027-06-02","MCU","Spider-Man: Homecoming"],
-["2027-06-03","MCU","Thor: Ragnarok"],
-["2027-06-04","MCU","Black Panther"],
-["2027-06-05","MCU","Avengers: Infinity War"],
-["2027-06-06","MCU","Ant-Man and the Wasp"],
-["2027-06-07","MCU","Captain Marvel"],
-["2027-06-08","MCU","Avengers: Endgame"],
+/* MCU — FINISHES IN JUNE */
+
+["2027-06-01","MCU","Captain America: Civil War"],
+["2027-06-02","MCU","Doctor Strange"],
+["2027-06-03","MCU","Guardians of the Galaxy Vol. 2"],
+["2027-06-04","MCU","Spider-Man: Homecoming"],
+["2027-06-05","MCU","Thor: Ragnarok"],
+["2027-06-06","MCU","Black Panther"],
+["2027-06-07","MCU","Avengers: Infinity War"],
+["2027-06-08","MCU","Ant-Man and the Wasp"],
+["2027-06-09","MCU","Captain Marvel"],
+["2027-06-10","MCU","Avengers: Endgame"],
+["2027-06-11","MCU","Spider-Man: Far From Home"],
 
 /* STAR WARS */
 
-["2027-06-09","Star Wars","The Phantom Menace"],
-["2027-06-10","Star Wars","Attack of the Clones"],
-["2027-06-11","Star Wars","Revenge of the Sith"],
-["2027-06-12","Star Wars","Solo: A Star Wars Story"],
-["2027-06-13","Star Wars","Rogue One"],
-["2027-06-14","Star Wars","A New Hope"],
-["2027-06-15","Star Wars","The Empire Strikes Back"],
-["2027-06-16","Star Wars","Return of the Jedi"],
-["2027-06-17","Star Wars","The Force Awakens"],
-["2027-06-18","Star Wars","The Last Jedi"],
-["2027-06-19","Star Wars","The Rise of Skywalker"],
+["2027-06-12","Star Wars","The Phantom Menace"],
+["2027-06-13","Star Wars","Attack of the Clones"],
+["2027-06-14","Star Wars","Revenge of the Sith"],
+["2027-06-15","Star Wars","Solo: A Star Wars Story"],
+["2027-06-16","Star Wars","Rogue One"],
+["2027-06-17","Star Wars","A New Hope"],
+["2027-06-18","Star Wars","The Empire Strikes Back"],
+["2027-06-19","Star Wars","Return of the Jedi"],
+["2027-06-20","Star Wars","The Force Awakens"],
+["2027-06-21","Star Wars","The Last Jedi"],
+["2027-06-22","Star Wars","The Rise of Skywalker"],
 
-/* =========================
+/* JUNE CATCH-UP */
+
+["2027-06-23","Wildcard","Free Pick / Catch-up"],
+["2027-06-24","Wildcard","Free Pick / Catch-up"],
+["2027-06-25","Wildcard","Free Pick / Catch-up"],
+["2027-06-26","Wildcard","Free Pick / Catch-up"],
+["2027-06-27","Wildcard","Free Pick / Catch-up"],
+["2027-06-28","Wildcard","Free Pick / Catch-up"],
+["2027-06-29","Wildcard","Free Pick / Catch-up"],
+["2027-06-30","Wildcard","Free Pick / Catch-up"],
+
+
+/* =========================================
    JULY
-========================= */
+========================================= */
 
 /* HARRY POTTER */
 
@@ -591,149 +838,88 @@ const movies = [
 ["2027-07-07","Harry Potter","Harry Potter and the Deathly Hallows – Part 1"],
 ["2027-07-08","Harry Potter","Harry Potter and the Deathly Hallows – Part 2"],
 
+/* HOBBIT FIRST */
+
+["2027-07-09","The Hobbit","An Unexpected Journey"],
+["2027-07-10","The Hobbit","The Desolation of Smaug"],
+["2027-07-11","The Hobbit","The Battle of the Five Armies"],
+
 /* LORD OF THE RINGS */
 
-["2027-07-09","The Lord of the Rings / Hobbit","The Fellowship of the Ring"],
-["2027-07-10","The Lord of the Rings / Hobbit","The Two Towers"],
-["2027-07-11","The Lord of the Rings / Hobbit","The Return of the King"],
-["2027-07-12","The Lord of the Rings / Hobbit","An Unexpected Journey"],
-["2027-07-13","The Lord of the Rings / Hobbit","The Desolation of Smaug"],
-["2027-07-14","The Lord of the Rings / Hobbit","The Battle of the Five Armies"],
+["2027-07-12","The Lord of the Rings","The Fellowship of the Ring"],
+["2027-07-13","The Lord of the Rings","The Two Towers"],
+["2027-07-14","The Lord of the Rings","The Return of the King"],
 
-/* TRANSFORMERS */
+/* TOP GUN */
 
-["2027-07-15","Transformers","Transformers"],
-["2027-07-16","Transformers","Revenge of the Fallen"],
-["2027-07-17","Transformers","Dark of the Moon"],
-["2027-07-18","Transformers","Age of Extinction"],
-["2027-07-19","Transformers","The Last Knight"],
-["2027-07-20","Transformers","Bumblebee"],
-["2027-07-21","Transformers","Rise of the Beasts"]
+["2027-07-15","Top Gun","Top Gun"],
+["2027-07-16","Top Gun","Top Gun: Maverick"],
+
+/* MAZE RUNNER */
+
+["2027-07-17","Maze Runner","The Maze Runner"],
+["2027-07-18","Maze Runner","The Scorch Trials"],
+["2027-07-19","Maze Runner","The Death Cure"],
+
+/* HUNGER GAMES */
+
+["2027-07-20","The Hunger Games","The Hunger Games"],
+["2027-07-21","The Hunger Games","Catching Fire"],
+["2027-07-22","The Hunger Games","Mockingjay – Part 1"],
+["2027-07-23","The Hunger Games","Mockingjay – Part 2"],
+["2027-07-24","The Hunger Games","The Ballad of Songbirds & Snakes"],
+
+/* TWILIGHT */
+
+["2027-07-25","Twilight","Twilight"],
+["2027-07-26","Twilight","New Moon"],
+["2027-07-27","Twilight","Eclipse"],
+["2027-07-28","Twilight","Breaking Dawn – Part 1"],
+["2027-07-29","Twilight","Breaking Dawn – Part 2"],
+
+/* JULY CATCH-UP */
+
+["2027-07-30","Wildcard","Free Pick / Catch-up"],
+["2027-07-31","Wildcard","Free Pick / Catch-up"],
+
+
+/* =========================================
+   AUGUST
+========================================= */
+
+["2027-08-01","Wildcard","Free Pick / Catch-up"],
+["2027-08-02","Wildcard","Free Pick / Catch-up"],
+["2027-08-03","Wildcard","Free Pick / Catch-up"],
+["2027-08-04","Wildcard","Free Pick / Catch-up"],
+["2027-08-05","Wildcard","Free Pick / Catch-up"],
+["2027-08-06","Wildcard","Free Pick / Catch-up"],
+["2027-08-07","Wildcard","Free Pick / Catch-up"],
+["2027-08-08","Wildcard","Free Pick / Catch-up"],
+["2027-08-09","Wildcard","Free Pick / Catch-up"],
+["2027-08-10","Wildcard","Free Pick / Catch-up"],
+["2027-08-11","Wildcard","Free Pick / Catch-up"],
+["2027-08-12","Wildcard","Free Pick / Catch-up"],
+["2027-08-13","Wildcard","Free Pick / Catch-up"],
+["2027-08-14","Wildcard","🎬 Marathon Finale — Your Choice"]
 
 ];
-
-
-/* =========================================================
-   FILL EVERY REMAINING DATE UNTIL AUGUST 14
-========================================================= */
-
-const start = new Date("2027-04-14T00:00:00");
-const end = new Date("2027-08-14T00:00:00");
-
-const existingDates = new Set(
-    movies.map(movie => movie[0])
-);
-
-for (
-    let d = new Date(start);
-    d <= end;
-    d.setDate(d.getDate() + 1)
-) {
-
-    const dateString =
-        d.toISOString().slice(0,10);
-
-    if (!existingDates.has(dateString)) {
-
-        movies.push([
-            dateString,
-            "Wildcard",
-            "Free Pick / Catch-up"
-        ]);
-
-    }
-}
-
-
-/* =========================================================
-   SORT BY DATE
-========================================================= */
-
-movies.sort(
-    (a,b) =>
-        new Date(a[0]) - new Date(b[0])
-);
 
 
 /* =========================================================
    STORAGE
 ========================================================= */
 
-function watchedKey(index) {
-    return "movie2027_watched_" + index;
+function watchedKey(i) {
+    return "movie_marathon_2027_watched_" + i;
 }
 
-function ratingKey(index) {
-    return "movie2027_rating_" + index;
+function ratingKey(i) {
+    return "movie_marathon_2027_rating_" + i;
 }
 
 
 /* =========================================================
-   SOUND ENGINE
-========================================================= */
-
-/*
-    These are synthesized sounds.
-    No external audio files are required.
-
-    Each franchise gets its own sound character.
-*/
-
-const soundProfiles = {
-
-    "Star Wars": {
-        type: "saber"
-    },
-
-    "Transformers": {
-        type: "metal"
-    },
-
-    "Back to the Future": {
-        type: "time"
-    },
-
-    "Indiana Jones": {
-        type: "whip"
-    },
-
-    "Pirates of the Caribbean": {
-        type: "pirate"
-    },
-
-    "Men in Black": {
-        type: "scifi"
-    },
-
-    "Planet of the Apes": {
-        type: "ape"
-    },
-
-    "MCU": {
-        type: "hero"
-    },
-
-    "Pixar": {
-        type: "magic"
-    },
-
-    "Harry Potter": {
-        type: "magic"
-    },
-
-    "The Lord of the Rings / Hobbit": {
-        type: "epic"
-    },
-
-    "Wildcard": {
-        type: "magic"
-    }
-
-};
-
-
-/* =========================================================
-   AUDIO
+   SOUND
 ========================================================= */
 
 function playSound(franchise) {
@@ -748,288 +934,99 @@ function playSound(franchise) {
 
         const ctx = new AudioContext();
 
-        const profile =
-            soundProfiles[franchise]?.type || "magic";
+        const sounds = {
 
+            "Star Wars": [110,220,440,880],
 
-        /* STAR WARS — LIGHTSABER */
+            "Transformers": [90,65,120],
 
-        if (profile === "saber") {
+            "Back to the Future": [220,330,440,660],
 
-            const osc =
-                ctx.createOscillator();
+            "Planet of the Apes": [100,80,65],
 
-            const gain =
-                ctx.createGain();
+            "Men in Black": [700,500,800],
 
-            osc.type = "sawtooth";
+            "Pirates of the Caribbean": [220,330,440,330],
 
-            osc.frequency.setValueAtTime(
-                120,
-                ctx.currentTime
-            );
+            "Pixar": [523,659,784,1046],
 
-            osc.frequency.exponentialRampToValueAtTime(
-                850,
-                ctx.currentTime + .22
-            );
+            "MCU": [261,329,392,523],
 
-            osc.frequency.exponentialRampToValueAtTime(
-                240,
-                ctx.currentTime + .5
-            );
+            "Harry Potter": [523,659,784,1046],
 
-            gain.gain.setValueAtTime(
-                .001,
-                ctx.currentTime
-            );
+            "The Hobbit": [196,247,294,392],
 
-            gain.gain.exponentialRampToValueAtTime(
-                .2,
-                ctx.currentTime + .03
-            );
+            "The Lord of the Rings": [147,196,247,294,392],
 
-            gain.gain.exponentialRampToValueAtTime(
-                .001,
-                ctx.currentTime + .55
-            );
+            "Top Gun": [196,247,330,392],
 
-            osc.connect(gain);
-            gain.connect(ctx.destination);
+            "Maze Runner": [140,180,230],
 
-            osc.start();
-            osc.stop(ctx.currentTime + .56);
+            "The Hunger Games": [220,277,330,440],
 
-            return;
-        }
+            "Twilight": [196,247,294,370],
 
+            "Wildcard": [440,660,880]
 
-        /* TRANSFORMERS — METAL */
+        };
 
-        if (profile === "metal") {
+        const frequencies =
+            sounds[franchise] ||
+            sounds["Wildcard"];
 
-            const osc =
-                ctx.createOscillator();
+        frequencies.forEach(
+            (frequency,index) => {
 
-            const gain =
-                ctx.createGain();
+                const oscillator =
+                    ctx.createOscillator();
 
-            osc.type = "square";
+                const gain =
+                    ctx.createGain();
 
-            osc.frequency.setValueAtTime(
-                90,
-                ctx.currentTime
-            );
+                const start =
+                    ctx.currentTime +
+                    index * .10;
 
-            osc.frequency.exponentialRampToValueAtTime(
-                35,
-                ctx.currentTime + .35
-            );
+                oscillator.type =
+                    franchise === "Star Wars"
+                        ? "sawtooth"
+                        : "sine";
 
-            gain.gain.setValueAtTime(
-                .001,
-                ctx.currentTime
-            );
+                oscillator.frequency.value =
+                    frequency;
 
-            gain.gain.exponentialRampToValueAtTime(
-                .18,
-                ctx.currentTime + .01
-            );
+                gain.gain.setValueAtTime(
+                    .001,
+                    start
+                );
 
-            gain.gain.exponentialRampToValueAtTime(
-                .001,
-                ctx.currentTime + .4
-            );
+                gain.gain.exponentialRampToValueAtTime(
+                    .12,
+                    start + .015
+                );
 
-            osc.connect(gain);
-            gain.connect(ctx.destination);
+                gain.gain.exponentialRampToValueAtTime(
+                    .001,
+                    start + .11
+                );
 
-            osc.start();
-            osc.stop(ctx.currentTime + .42);
+                oscillator.connect(gain);
+                gain.connect(ctx.destination);
 
-            return;
-        }
+                oscillator.start(start);
 
+                oscillator.stop(
+                    start + .12
+                );
 
-        /* TIME MACHINE */
-
-        if (profile === "time") {
-
-            playSequence(
-                ctx,
-                [220,330,440,660],
-                .12
-            );
-
-            return;
-        }
-
-
-        /* WHIP */
-
-        if (profile === "whip") {
-
-            playSequence(
-                ctx,
-                [900,300,120],
-                .08
-            );
-
-            return;
-        }
-
-
-        /* PIRATES */
-
-        if (profile === "pirate") {
-
-            playSequence(
-                ctx,
-                [220,330,440,330],
-                .16
-            );
-
-            return;
-        }
-
-
-        /* MEN IN BLACK */
-
-        if (profile === "scifi") {
-
-            playSequence(
-                ctx,
-                [700,500,800],
-                .11
-            );
-
-            return;
-        }
-
-
-        /* APES */
-
-        if (profile === "ape") {
-
-            playSequence(
-                ctx,
-                [120,100,80],
-                .18
-            );
-
-            return;
-        }
-
-
-        /* MCU */
-
-        if (profile === "hero") {
-
-            playSequence(
-                ctx,
-                [261,329,392,523],
-                .12
-            );
-
-            return;
-        }
-
-
-        /* MAGIC / PIXAR / HARRY POTTER */
-
-        if (profile === "magic") {
-
-            playSequence(
-                ctx,
-                [523,659,784,1046],
-                .10
-            );
-
-            return;
-        }
-
-
-        /* LOTR */
-
-        if (profile === "epic") {
-
-            playSequence(
-                ctx,
-                [196,247,294,392],
-                .18
-            );
-
-            return;
-        }
-
-    }
-
-    catch (error) {
-
-        console.log(
-            "Audio unavailable:",
-            error
+            }
         );
 
     }
 
-}
-
-
-/* =========================================================
-   SOUND SEQUENCE
-========================================================= */
-
-function playSequence(
-    ctx,
-    frequencies,
-    duration
-) {
-
-    frequencies.forEach(
-        (frequency,index) => {
-
-            const osc =
-                ctx.createOscillator();
-
-            const gain =
-                ctx.createGain();
-
-            const start =
-                ctx.currentTime +
-                index * duration;
-
-            osc.type = "sine";
-
-            osc.frequency.value =
-                frequency;
-
-            gain.gain.setValueAtTime(
-                .001,
-                start
-            );
-
-            gain.gain.exponentialRampToValueAtTime(
-                .14,
-                start + .015
-            );
-
-            gain.gain.exponentialRampToValueAtTime(
-                .001,
-                start + duration
-            );
-
-            osc.connect(gain);
-            gain.connect(ctx.destination);
-
-            osc.start(start);
-
-            osc.stop(
-                start + duration
-            );
-
-        }
-    );
+    catch (e) {
+        console.log("Audio unavailable");
+    }
 
 }
 
@@ -1038,7 +1035,7 @@ function playSequence(
    RENDER
 ========================================================= */
 
-function renderSchedule() {
+function render() {
 
     const container =
         document.getElementById("schedule");
@@ -1047,14 +1044,22 @@ function renderSchedule() {
 
     let currentMonth = "";
 
+    let monthBlock = null;
+
+    let franchiseBlock = null;
+
+    let currentFranchise = "";
+
 
     movies.forEach(
         (movie,index) => {
 
             const date =
-                new Date(movie[0] + "T00:00:00");
+                new Date(
+                    movie[0] + "T00:00:00"
+                );
 
-            const monthName =
+            const month =
                 date.toLocaleString(
                     "en-US",
                     {
@@ -1064,24 +1069,182 @@ function renderSchedule() {
                 );
 
 
-            /* MONTH HEADER */
+            /* NEW MONTH */
 
-            if (monthName !== currentMonth) {
+            if (month !== currentMonth) {
 
-                currentMonth =
-                    monthName;
+                currentMonth = month;
 
-                const heading =
-                    document.createElement("h2");
+                monthBlock =
+                    document.createElement(
+                        "section"
+                    );
 
-                heading.className =
-                    "month-title";
+                monthBlock.className =
+                    "month-block";
 
-                heading.textContent =
-                    monthName;
+
+                const monthHeader =
+                    document.createElement(
+                        "div"
+                    );
+
+                monthHeader.className =
+                    "month-header";
+
+
+                const monthName =
+                    document.createElement(
+                        "h2"
+                    );
+
+                monthName.className =
+                    "month-name";
+
+                monthName.textContent =
+                    month;
+
+
+                const monthCount =
+                    document.createElement(
+                        "span"
+                    );
+
+                monthCount.className =
+                    "month-count";
+
+                monthCount.textContent =
+                    "MOVIE MONTH";
+
+
+                monthHeader.appendChild(
+                    monthName
+                );
+
+                monthHeader.appendChild(
+                    monthCount
+                );
+
+                monthBlock.appendChild(
+                    monthHeader
+                );
 
                 container.appendChild(
-                    heading
+                    monthBlock
+                );
+
+                currentFranchise = "";
+            }
+
+
+            /* NEW FRANCHISE */
+
+            if (movie[1] !== currentFranchise) {
+
+                currentFranchise =
+                    movie[1];
+
+                const style =
+                    franchiseStyles[
+                        movie[1]
+                    ] ||
+                    franchiseStyles.Wildcard;
+
+
+                franchiseBlock =
+                    document.createElement(
+                        "div"
+                    );
+
+                franchiseBlock.className =
+                    "franchise-block";
+
+
+                franchiseBlock.style.setProperty(
+                    "--franchise-accent",
+                    style.accent
+                );
+
+                franchiseBlock.style.setProperty(
+                    "--franchise-bg",
+                    style.bg
+                );
+
+                franchiseBlock.style.setProperty(
+                    "--franchise-accent-soft",
+                    style.soft
+                );
+
+                franchiseBlock.style.setProperty(
+                    "--franchise-border",
+                    style.border
+                );
+
+
+                const franchiseHeader =
+                    document.createElement(
+                        "div"
+                    );
+
+                franchiseHeader.className =
+                    "franchise-header";
+
+
+                const icon =
+                    document.createElement(
+                        "div"
+                    );
+
+                icon.className =
+                    "franchise-icon";
+
+                icon.textContent =
+                    style.icon;
+
+
+                const name =
+                    document.createElement(
+                        "div"
+                    );
+
+                name.className =
+                    "franchise-name";
+
+                name.textContent =
+                    movie[1];
+
+
+                const count =
+                    document.createElement(
+                        "div"
+                    );
+
+                count.className =
+                    "franchise-films";
+
+                count.textContent =
+                    "FILMS";
+
+
+                franchiseHeader.appendChild(
+                    icon
+                );
+
+                franchiseHeader.appendChild(
+                    name
+                );
+
+                franchiseHeader.appendChild(
+                    count
+                );
+
+
+                franchiseBlock.appendChild(
+                    franchiseHeader
+                );
+
+                monthBlock.appendChild(
+                    franchiseBlock
                 );
 
             }
@@ -1089,17 +1252,19 @@ function renderSchedule() {
 
             /* MOVIE ROW */
 
-            const row =
-                document.createElement("div");
-
-            row.className =
-                "movie";
-
-
             const watched =
                 localStorage.getItem(
                     watchedKey(index)
                 ) === "true";
+
+
+            const row =
+                document.createElement(
+                    "div"
+                );
+
+            row.className =
+                "movie";
 
 
             if (watched) {
@@ -1145,24 +1310,6 @@ function renderSchedule() {
                 );
 
 
-            const info =
-                document.createElement(
-                    "div"
-                );
-
-
-            const franchise =
-                document.createElement(
-                    "div"
-                );
-
-            franchise.className =
-                "franchise";
-
-            franchise.textContent =
-                movie[1];
-
-
             const title =
                 document.createElement(
                     "div"
@@ -1173,15 +1320,6 @@ function renderSchedule() {
 
             title.textContent =
                 movie[2];
-
-
-            info.appendChild(
-                franchise
-            );
-
-            info.appendChild(
-                title
-            );
 
 
             const rating =
@@ -1195,11 +1333,14 @@ function renderSchedule() {
             rating.className =
                 "rating";
 
-            rating.min = "0";
+            rating.min =
+                "0";
 
-            rating.max = "10";
+            rating.max =
+                "10";
 
-            rating.step = ".1";
+            rating.step =
+                ".1";
 
             rating.placeholder =
                 "/10";
@@ -1210,7 +1351,7 @@ function renderSchedule() {
                 ) || "";
 
 
-            /* CHECKBOX EVENT */
+            /* CHECKBOX */
 
             checkbox.addEventListener(
                 "change",
@@ -1237,13 +1378,13 @@ function renderSchedule() {
 
                     }
 
-                    renderSchedule();
+                    render();
 
                 }
             );
 
 
-            /* RATING EVENT */
+            /* RATING */
 
             rating.addEventListener(
                 "change",
@@ -1283,7 +1424,7 @@ function renderSchedule() {
             );
 
             row.appendChild(
-                info
+                title
             );
 
             row.appendChild(
@@ -1291,7 +1432,7 @@ function renderSchedule() {
             );
 
 
-            container.appendChild(
+            franchiseBlock.appendChild(
                 row
             );
 
@@ -1312,7 +1453,7 @@ function updateStats() {
 
     let watched = 0;
 
-    let ratings = [];
+    const ratings = [];
 
 
     movies.forEach(
@@ -1337,9 +1478,7 @@ function updateStats() {
                 );
 
 
-            if (
-                !isNaN(rating)
-            ) {
+            if (!isNaN(rating)) {
 
                 ratings.push(
                     rating
@@ -1355,16 +1494,17 @@ function updateStats() {
         movies.length;
 
 
-    const percentage =
+    const percent =
         Math.round(
             watched / total * 100
         );
 
 
-    let average = "—";
+    let average =
+        "—";
 
 
-    if (ratings.length > 0) {
+    if (ratings.length) {
 
         const sum =
             ratings.reduce(
@@ -1375,13 +1515,14 @@ function updateStats() {
         average =
             (
                 sum / ratings.length
-            ).toFixed(1) + " / 10";
+            ).toFixed(1) +
+            " / 10";
 
     }
 
 
     document.getElementById(
-        "watchedCount"
+        "watched"
     ).textContent =
         watched + " / " + total;
 
@@ -1389,7 +1530,7 @@ function updateStats() {
     document.getElementById(
         "percentage"
     ).textContent =
-        percentage + "%";
+        percent + "%";
 
 
     document.getElementById(
@@ -1407,7 +1548,7 @@ function updateStats() {
     document.getElementById(
         "progressBar"
     ).style.width =
-        percentage + "%";
+        percent + "%";
 
 }
 
@@ -1418,13 +1559,11 @@ function updateStats() {
 
 function resetProgress() {
 
-    const confirmation =
-        confirm(
-            "Are you sure you want to reset your entire movie marathon?"
-        );
-
-
-    if (!confirmation) {
+    if (
+        !confirm(
+            "Reset your entire 2027 movie marathon?"
+        )
+    ) {
         return;
     }
 
@@ -1444,7 +1583,7 @@ function resetProgress() {
     );
 
 
-    renderSchedule();
+    render();
 
 }
 
@@ -1453,7 +1592,7 @@ function resetProgress() {
    START
 ========================================================= */
 
-renderSchedule();
+render();
 
 </script>
 
