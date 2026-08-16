@@ -7,14 +7,13 @@
 <title>🎬 The Great Movie Marathon — 2027</title>
 
 <style>
+
 :root {
     --bg: #05070c;
-    --bg2: #0b1019;
     --text: #f5f0e6;
     --muted: #929bad;
     --gold: #d8b45a;
     --line: #252e3e;
-    --card: #0e1522;
 }
 
 * {
@@ -27,56 +26,54 @@ html {
 
 body {
     margin: 0;
-    background:
-        radial-gradient(circle at 50% -10%, #1b2940 0%, transparent 40%),
-        linear-gradient(180deg, #070a11 0%, #03050a 100%);
     color: var(--text);
     font-family: Arial, Helvetica, sans-serif;
+
+    background:
+        radial-gradient(
+            circle at 50% -10%,
+            #1b2940 0%,
+            transparent 40%
+        ),
+        linear-gradient(
+            180deg,
+            #070a11 0%,
+            #03050a 100%
+        );
 }
 
-/* =========================================
+
+/* =========================================================
    HEADER
-========================================= */
+========================================================= */
 
 header {
     position: relative;
     overflow: hidden;
+
     text-align: center;
+
     padding: 65px 20px 50px;
+
     border-bottom: 1px solid var(--line);
-}
-
-header:before {
-    content: "✦";
-    position: absolute;
-    left: 12%;
-    top: 50px;
-    color: #d8b45a;
-    opacity: .25;
-    font-size: 28px;
-}
-
-header:after {
-    content: "✦";
-    position: absolute;
-    right: 12%;
-    top: 80px;
-    color: #d8b45a;
-    opacity: .2;
-    font-size: 20px;
 }
 
 .eyebrow {
     color: var(--gold);
+
     font-size: 11px;
     font-weight: 800;
+
     letter-spacing: 5px;
 }
 
 h1 {
     margin: 18px 0 12px;
+
     font-family: Georgia, "Times New Roman", serif;
+
     font-size: clamp(40px, 7vw, 78px);
+
     line-height: .95;
 }
 
@@ -85,50 +82,71 @@ h1 {
     font-size: 15px;
 }
 
-/* =========================================
+
+/* =========================================================
    MAIN
-========================================= */
+========================================================= */
 
 main {
     width: min(1150px, calc(100% - 30px));
+
     margin: auto;
+
     padding: 30px 0 80px;
 }
 
-/* =========================================
+
+/* =========================================================
    STATS
-========================================= */
+========================================================= */
 
 .stats {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
     gap: 14px;
 }
 
 .stat {
     padding: 20px;
+
     text-align: center;
-    background: linear-gradient(145deg, #111a2a, #0b111c);
+
+    background:
+        linear-gradient(
+            145deg,
+            #111a2a,
+            #0b111c
+        );
+
     border: 1px solid var(--line);
+
     border-radius: 18px;
 }
 
 .stat-number {
     display: block;
+
     color: var(--gold);
+
     font-size: 26px;
     font-weight: bold;
 }
 
 .stat-label {
     color: var(--muted);
+
     font-size: 10px;
+
     letter-spacing: 2px;
 }
 
-/* =========================================
+
+/* =========================================================
    PROGRESS
-========================================= */
+========================================================= */
 
 .progress-wrap {
     margin: 22px 0 40px;
@@ -136,76 +154,105 @@ main {
 
 .progress-info {
     display: flex;
+
     justify-content: space-between;
+
     color: var(--muted);
+
     font-size: 12px;
+
     margin-bottom: 8px;
 }
 
 .progress {
     height: 11px;
+
     overflow: hidden;
+
     border-radius: 100px;
+
     background: #202938;
 }
 
 .progress-bar {
     width: 0%;
     height: 100%;
+
     border-radius: 100px;
-    background: linear-gradient(
-        90deg,
-        #b78e39,
-        #f2d98b
-    );
+
+    background:
+        linear-gradient(
+            90deg,
+            #b78e39,
+            #f2d98b
+        );
+
     transition: width .5s ease;
 }
 
-/* =========================================
-   MONTH BLOCK
-========================================= */
+
+/* =========================================================
+   MONTH
+========================================================= */
 
 .month-block {
     margin: 35px 0;
+
     padding: 25px;
+
     background:
         linear-gradient(
             145deg,
             rgba(18,25,38,.95),
             rgba(7,11,18,.95)
         );
+
     border: 1px solid #293346;
+
     border-radius: 24px;
-    box-shadow: 0 15px 50px rgba(0,0,0,.25);
+
+    box-shadow:
+        0 15px 50px rgba(0,0,0,.25);
 }
 
 .month-header {
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
+
     margin-bottom: 22px;
 }
 
 .month-name {
     margin: 0;
+
     font-family: Georgia, serif;
+
     font-size: 31px;
 }
 
 .month-count {
     color: var(--muted);
+
     font-size: 12px;
 }
 
-/* =========================================
-   FRANCHISE BLOCK
-========================================= */
+
+/* =========================================================
+   FRANCHISE
+========================================================= */
 
 .franchise-block {
     margin: 16px 0;
+
     overflow: hidden;
 
-    border: 1px solid var(--franchise-border);
+    border:
+        1px solid
+        var(--franchise-border);
+
     border-radius: 17px;
 
     background:
@@ -222,12 +269,16 @@ main {
 
 .franchise-header {
     display: flex;
+
     align-items: center;
+
     gap: 12px;
 
     padding: 15px 18px;
 
-    border-bottom: 1px solid var(--franchise-border);
+    border-bottom:
+        1px solid
+        var(--franchise-border);
 
     background:
         linear-gradient(
@@ -242,48 +293,65 @@ main {
     height: 35px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
     border-radius: 10px;
 
-    background: var(--franchise-accent-soft);
-    color: var(--franchise-accent);
+    background:
+        var(--franchise-accent-soft);
+
+    color:
+        var(--franchise-accent);
 
     font-size: 18px;
 }
 
 .franchise-name {
-    color: var(--franchise-accent);
+    color:
+        var(--franchise-accent);
+
     font-size: 13px;
+
     font-weight: 900;
+
     letter-spacing: 1.5px;
+
     text-transform: uppercase;
 }
 
 .franchise-films {
     color: var(--muted);
+
     margin-left: auto;
+
     font-size: 11px;
 }
 
-/* =========================================
+
+/* =========================================================
    MOVIE
-========================================= */
+========================================================= */
 
 .movie {
     display: grid;
-    grid-template-columns: 42px 105px 1fr 70px;
+
+    grid-template-columns:
+        42px 105px 1fr auto;
+
     align-items: center;
+
     gap: 12px;
 
     padding: 12px 15px;
 
-    border-bottom: 1px solid rgba(255,255,255,.045);
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.045);
 
     transition:
-        background .15s ease,
-        transform .15s ease;
+        background .15s ease;
 }
 
 .movie:last-child {
@@ -291,7 +359,8 @@ main {
 }
 
 .movie:hover {
-    background: rgba(255,255,255,.035);
+    background:
+        rgba(255,255,255,.035);
 }
 
 .movie.watched {
@@ -302,9 +371,10 @@ main {
     text-decoration: line-through;
 }
 
-/* =========================================
+
+/* =========================================================
    CHECKBOX
-========================================= */
+========================================================= */
 
 .checkbox {
     width: 22px;
@@ -312,57 +382,308 @@ main {
 
     cursor: pointer;
 
-    accent-color: var(--franchise-accent);
+    accent-color:
+        var(--franchise-accent);
 }
 
-/* =========================================
+
+/* =========================================================
    DATE
-========================================= */
+========================================================= */
 
 .date {
     color: var(--muted);
+
     font-size: 12px;
 }
 
-/* =========================================
+
+/* =========================================================
    TITLE
-========================================= */
+========================================================= */
 
 .movie-title {
     font-size: 15px;
+
     font-weight: 650;
 }
 
-/* =========================================
-   RATING
-========================================= */
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.movie-actions {
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+}
 
 .rating {
-    width: 62px;
+    width: 58px;
 
     padding: 7px;
 
-    color: var(--text);
+    color: white;
+
     text-align: center;
 
-    background: rgba(0,0,0,.35);
-    border: 1px solid var(--franchise-border);
+    background:
+        rgba(0,0,0,.35);
+
+    border:
+        1px solid
+        var(--franchise-border);
+
     border-radius: 8px;
 
     outline: none;
 }
 
 .rating:focus {
-    border-color: var(--franchise-accent);
+    border-color:
+        var(--franchise-accent);
 }
 
 .rating::placeholder {
     color: #657085;
 }
 
-/* =========================================
+.action-button {
+    width: 31px;
+    height: 31px;
+
+    border: 1px solid
+        var(--franchise-border);
+
+    background:
+        rgba(0,0,0,.25);
+
+    color:
+        var(--franchise-accent);
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    transition:
+        transform .15s ease,
+        background .15s ease;
+}
+
+.action-button:hover {
+    transform: scale(1.08);
+
+    background:
+        var(--franchise-accent-soft);
+}
+
+
+/* =========================================================
+   ADD MOVIE
+========================================================= */
+
+.empty-movie {
+    display: grid;
+
+    grid-template-columns:
+        42px 105px 1fr;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 12px 15px;
+}
+
+.add-movie-button {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    width: 100%;
+
+    padding: 11px 15px;
+
+    color:
+        var(--franchise-accent);
+
+    background:
+        var(--franchise-accent-soft);
+
+    border:
+        1px dashed
+        var(--franchise-border);
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    font-weight: 700;
+
+    transition:
+        background .2s ease,
+        transform .15s ease;
+}
+
+.add-movie-button:hover {
+    transform: translateY(-1px);
+
+    background:
+        rgba(255,255,255,.08);
+}
+
+
+/* =========================================================
+   ADD MOVIE MODAL
+========================================================= */
+
+.modal {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 1000;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background:
+        rgba(0,0,0,.78);
+
+    backdrop-filter:
+        blur(8px);
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-box {
+    width: min(500px, 100%);
+
+    padding: 28px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #121b2b,
+            #080d16
+        );
+
+    border:
+        1px solid #344158;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 30px 100px rgba(0,0,0,.6);
+}
+
+.modal-title {
+    margin: 0 0 20px;
+
+    font-family: Georgia, serif;
+
+    font-size: 26px;
+}
+
+.modal-date {
+    color: var(--muted);
+
+    margin-bottom: 18px;
+
+    font-size: 13px;
+}
+
+.form-label {
+    display: block;
+
+    margin: 15px 0 7px;
+
+    color: var(--muted);
+
+    font-size: 11px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+.form-input,
+.form-select {
+    width: 100%;
+
+    padding: 12px 13px;
+
+    color: white;
+
+    background: #080d15;
+
+    border:
+        1px solid #303b4e;
+
+    border-radius: 9px;
+
+    outline: none;
+
+    font-size: 14px;
+}
+
+.form-input:focus,
+.form-select:focus {
+    border-color: var(--gold);
+}
+
+.modal-actions {
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 22px;
+}
+
+.modal-button {
+    flex: 1;
+
+    padding: 12px;
+
+    border-radius: 9px;
+
+    cursor: pointer;
+
+    font-weight: 700;
+}
+
+.cancel-button {
+    color: var(--muted);
+
+    background: transparent;
+
+    border: 1px solid #303b4e;
+}
+
+.save-button {
+    color: #111;
+
+    background: var(--gold);
+
+    border: 1px solid var(--gold);
+}
+
+
+/* =========================================================
    RESET
-========================================= */
+========================================================= */
 
 .reset {
     display: block;
@@ -372,9 +693,13 @@ main {
     padding: 10px 18px;
 
     color: var(--muted);
+
     background: transparent;
 
-    border: 1px solid var(--line);
+    border:
+        1px solid
+        var(--line);
+
     border-radius: 9px;
 
     cursor: pointer;
@@ -382,32 +707,40 @@ main {
 
 .reset:hover {
     color: white;
-    border-color: var(--gold);
+
+    border-color:
+        var(--gold);
 }
 
-/* =========================================
+
+/* =========================================================
    FOOTER
-========================================= */
+========================================================= */
 
 footer {
     padding: 30px;
+
     text-align: center;
 
     color: var(--muted);
 
-    border-top: 1px solid var(--line);
+    border-top:
+        1px solid
+        var(--line);
 
     font-size: 13px;
 }
 
-/* =========================================
+
+/* =========================================================
    MOBILE
-========================================= */
+========================================================= */
 
 @media (max-width: 700px) {
 
     main {
-        width: calc(100% - 18px);
+        width:
+            calc(100% - 18px);
     }
 
     .stats {
@@ -418,20 +751,21 @@ footer {
         padding: 15px;
     }
 
-    .month-header {
-        align-items: flex-start;
-    }
-
     .month-name {
         font-size: 25px;
     }
 
     .movie {
-        grid-template-columns: 32px 70px 1fr;
+        grid-template-columns:
+            32px 70px 1fr;
+    }
+
+    .movie-actions {
+        grid-column: 3;
     }
 
     .rating {
-        display: none;
+        width: 58px;
     }
 
     .date {
@@ -441,11 +775,20 @@ footer {
     .movie-title {
         font-size: 13px;
     }
+
+    .empty-movie {
+        grid-template-columns:
+            32px 70px 1fr;
+    }
+
 }
+
 </style>
 </head>
 
+
 <body>
+
 
 <header>
 
@@ -467,9 +810,11 @@ footer {
 
 <main>
 
+
     <div class="stats">
 
         <div class="stat">
+
             <span
                 class="stat-number"
                 id="watched">
@@ -479,9 +824,12 @@ footer {
             <span class="stat-label">
                 FILMS WATCHED
             </span>
+
         </div>
 
+
         <div class="stat">
+
             <span
                 class="stat-number"
                 id="percentage">
@@ -491,9 +839,12 @@ footer {
             <span class="stat-label">
                 MARATHON COMPLETE
             </span>
+
         </div>
 
+
         <div class="stat">
+
             <span
                 class="stat-number"
                 id="average">
@@ -503,6 +854,7 @@ footer {
             <span class="stat-label">
                 AVERAGE RATING
             </span>
+
         </div>
 
     </div>
@@ -545,6 +897,7 @@ footer {
 
     </button>
 
+
 </main>
 
 
@@ -555,10 +908,146 @@ footer {
 </footer>
 
 
+<!-- =======================================================
+     ADD MOVIE MODAL
+======================================================== -->
+
+<div
+    class="modal"
+    id="movieModal">
+
+    <div class="modal-box">
+
+        <h2
+            class="modal-title"
+            id="modalTitle">
+
+            Add Your Movie
+
+        </h2>
+
+        <div
+            class="modal-date"
+            id="modalDate">
+        </div>
+
+
+        <label class="form-label">
+            Movie title
+        </label>
+
+        <input
+            class="form-input"
+            id="movieInput"
+            type="text"
+            placeholder="e.g. Interstellar">
+
+
+        <label class="form-label">
+            Franchise
+        </label>
+
+        <select
+            class="form-select"
+            id="franchiseInput">
+
+            <option value="Wildcard">
+                🎬 Custom / Other
+            </option>
+
+            <option value="Back to the Future">
+                ⚡ Back to the Future
+            </option>
+
+            <option value="Transformers">
+                🤖 Transformers
+            </option>
+
+            <option value="Planet of the Apes">
+                🦍 Planet of the Apes
+            </option>
+
+            <option value="Men in Black">
+                🕶️ Men in Black
+            </option>
+
+            <option value="Pirates of the Caribbean">
+                🏴‍☠️ Pirates of the Caribbean
+            </option>
+
+            <option value="Pixar">
+                🔴 Pixar
+            </option>
+
+            <option value="MCU">
+                🦸 MCU
+            </option>
+
+            <option value="Star Wars">
+                ⚔️ Star Wars
+            </option>
+
+            <option value="Harry Potter">
+                ⚡ Harry Potter
+            </option>
+
+            <option value="The Hobbit">
+                🧙 The Hobbit
+            </option>
+
+            <option value="The Lord of the Rings">
+                💍 The Lord of the Rings
+            </option>
+
+            <option value="Top Gun">
+                ✈️ Top Gun
+            </option>
+
+            <option value="Maze Runner">
+                🏃 Maze Runner
+            </option>
+
+            <option value="The Hunger Games">
+                🏹 The Hunger Games
+            </option>
+
+            <option value="Twilight">
+                🌙 Twilight
+            </option>
+
+        </select>
+
+
+        <div class="modal-actions">
+
+            <button
+                class="modal-button cancel-button"
+                onclick="closeModal()">
+
+                Cancel
+
+            </button>
+
+            <button
+                class="modal-button save-button"
+                onclick="saveCustomMovie()">
+
+                Save Movie 🎬
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
 <script>
 
+
 /* =========================================================
-   FRANCHISE DATA
+   FRANCHISE STYLES
 ========================================================= */
 
 const franchiseStyles = {
@@ -695,22 +1184,16 @@ const franchiseStyles = {
 
 
 /* =========================================================
-   MOVIES
+   BASE MOVIE SCHEDULE
 ========================================================= */
 
 const movies = [
 
-/* =========================================
-   APRIL
-========================================= */
-
-/* BACK TO THE FUTURE */
+/* APRIL */
 
 ["2027-04-14","Back to the Future","Back to the Future"],
 ["2027-04-15","Back to the Future","Back to the Future Part II"],
 ["2027-04-16","Back to the Future","Back to the Future Part III"],
-
-/* TRANSFORMERS */
 
 ["2027-04-17","Transformers","Transformers"],
 ["2027-04-18","Transformers","Revenge of the Fallen"],
@@ -720,33 +1203,23 @@ const movies = [
 ["2027-04-22","Transformers","Bumblebee"],
 ["2027-04-23","Transformers","Rise of the Beasts"],
 
-/* PLANET OF THE APES */
-
 ["2027-04-24","Planet of the Apes","Rise of the Planet of the Apes"],
 ["2027-04-25","Planet of the Apes","Dawn of the Planet of the Apes"],
 ["2027-04-26","Planet of the Apes","War for the Planet of the Apes"],
 ["2027-04-27","Planet of the Apes","Kingdom of the Planet of the Apes"],
-
-/* MEN IN BLACK */
 
 ["2027-04-28","Men in Black","Men in Black"],
 ["2027-04-29","Men in Black","Men in Black II"],
 ["2027-04-30","Men in Black","Men in Black 3"],
 
 
-/* =========================================
-   MAY
-========================================= */
-
-/* PIRATES */
+/* MAY */
 
 ["2027-05-01","Pirates of the Caribbean","The Curse of the Black Pearl"],
 ["2027-05-02","Pirates of the Caribbean","Dead Man's Chest"],
 ["2027-05-03","Pirates of the Caribbean","At World's End"],
 ["2027-05-04","Pirates of the Caribbean","On Stranger Tides"],
 ["2027-05-05","Pirates of the Caribbean","Dead Men Tell No Tales"],
-
-/* PIXAR */
 
 ["2027-05-06","Pixar","Toy Story"],
 ["2027-05-07","Pixar","A Bug's Life"],
@@ -763,8 +1236,6 @@ const movies = [
 ["2027-05-18","Pixar","Brave"],
 ["2027-05-19","Pixar","Monsters University"],
 
-/* MCU — STARTS IN MAY */
-
 ["2027-05-20","MCU","Iron Man"],
 ["2027-05-21","MCU","The Incredible Hulk"],
 ["2027-05-22","MCU","Iron Man 2"],
@@ -779,11 +1250,7 @@ const movies = [
 ["2027-05-31","MCU","Ant-Man"],
 
 
-/* =========================================
-   JUNE
-========================================= */
-
-/* MCU — FINISHES IN JUNE */
+/* JUNE */
 
 ["2027-06-01","MCU","Captain America: Civil War"],
 ["2027-06-02","MCU","Doctor Strange"],
@@ -797,8 +1264,6 @@ const movies = [
 ["2027-06-10","MCU","Avengers: Endgame"],
 ["2027-06-11","MCU","Spider-Man: Far From Home"],
 
-/* STAR WARS */
-
 ["2027-06-12","Star Wars","The Phantom Menace"],
 ["2027-06-13","Star Wars","Attack of the Clones"],
 ["2027-06-14","Star Wars","Revenge of the Sith"],
@@ -811,23 +1276,17 @@ const movies = [
 ["2027-06-21","Star Wars","The Last Jedi"],
 ["2027-06-22","Star Wars","The Rise of Skywalker"],
 
-/* JUNE CATCH-UP */
-
-["2027-06-23","Wildcard","Free Pick / Catch-up"],
-["2027-06-24","Wildcard","Free Pick / Catch-up"],
-["2027-06-25","Wildcard","Free Pick / Catch-up"],
-["2027-06-26","Wildcard","Free Pick / Catch-up"],
-["2027-06-27","Wildcard","Free Pick / Catch-up"],
-["2027-06-28","Wildcard","Free Pick / Catch-up"],
-["2027-06-29","Wildcard","Free Pick / Catch-up"],
-["2027-06-30","Wildcard","Free Pick / Catch-up"],
+["2027-06-23","Wildcard",null],
+["2027-06-24","Wildcard",null],
+["2027-06-25","Wildcard",null],
+["2027-06-26","Wildcard",null],
+["2027-06-27","Wildcard",null],
+["2027-06-28","Wildcard",null],
+["2027-06-29","Wildcard",null],
+["2027-06-30","Wildcard",null],
 
 
-/* =========================================
-   JULY
-========================================= */
-
-/* HARRY POTTER */
+/* JULY */
 
 ["2027-07-01","Harry Potter","Harry Potter and the Philosopher's Stone"],
 ["2027-07-02","Harry Potter","Harry Potter and the Chamber of Secrets"],
@@ -838,30 +1297,20 @@ const movies = [
 ["2027-07-07","Harry Potter","Harry Potter and the Deathly Hallows – Part 1"],
 ["2027-07-08","Harry Potter","Harry Potter and the Deathly Hallows – Part 2"],
 
-/* HOBBIT FIRST */
-
 ["2027-07-09","The Hobbit","An Unexpected Journey"],
 ["2027-07-10","The Hobbit","The Desolation of Smaug"],
 ["2027-07-11","The Hobbit","The Battle of the Five Armies"],
-
-/* LORD OF THE RINGS */
 
 ["2027-07-12","The Lord of the Rings","The Fellowship of the Ring"],
 ["2027-07-13","The Lord of the Rings","The Two Towers"],
 ["2027-07-14","The Lord of the Rings","The Return of the King"],
 
-/* TOP GUN */
-
 ["2027-07-15","Top Gun","Top Gun"],
 ["2027-07-16","Top Gun","Top Gun: Maverick"],
-
-/* MAZE RUNNER */
 
 ["2027-07-17","Maze Runner","The Maze Runner"],
 ["2027-07-18","Maze Runner","The Scorch Trials"],
 ["2027-07-19","Maze Runner","The Death Cure"],
-
-/* HUNGER GAMES */
 
 ["2027-07-20","The Hunger Games","The Hunger Games"],
 ["2027-07-21","The Hunger Games","Catching Fire"],
@@ -869,38 +1318,32 @@ const movies = [
 ["2027-07-23","The Hunger Games","Mockingjay – Part 2"],
 ["2027-07-24","The Hunger Games","The Ballad of Songbirds & Snakes"],
 
-/* TWILIGHT */
-
 ["2027-07-25","Twilight","Twilight"],
 ["2027-07-26","Twilight","New Moon"],
 ["2027-07-27","Twilight","Eclipse"],
 ["2027-07-28","Twilight","Breaking Dawn – Part 1"],
 ["2027-07-29","Twilight","Breaking Dawn – Part 2"],
 
-/* JULY CATCH-UP */
-
-["2027-07-30","Wildcard","Free Pick / Catch-up"],
-["2027-07-31","Wildcard","Free Pick / Catch-up"],
+["2027-07-30","Wildcard",null],
+["2027-07-31","Wildcard",null],
 
 
-/* =========================================
-   AUGUST
-========================================= */
+/* AUGUST */
 
-["2027-08-01","Wildcard","Free Pick / Catch-up"],
-["2027-08-02","Wildcard","Free Pick / Catch-up"],
-["2027-08-03","Wildcard","Free Pick / Catch-up"],
-["2027-08-04","Wildcard","Free Pick / Catch-up"],
-["2027-08-05","Wildcard","Free Pick / Catch-up"],
-["2027-08-06","Wildcard","Free Pick / Catch-up"],
-["2027-08-07","Wildcard","Free Pick / Catch-up"],
-["2027-08-08","Wildcard","Free Pick / Catch-up"],
-["2027-08-09","Wildcard","Free Pick / Catch-up"],
-["2027-08-10","Wildcard","Free Pick / Catch-up"],
-["2027-08-11","Wildcard","Free Pick / Catch-up"],
-["2027-08-12","Wildcard","Free Pick / Catch-up"],
-["2027-08-13","Wildcard","Free Pick / Catch-up"],
-["2027-08-14","Wildcard","🎬 Marathon Finale — Your Choice"]
+["2027-08-01","Wildcard",null],
+["2027-08-02","Wildcard",null],
+["2027-08-03","Wildcard",null],
+["2027-08-04","Wildcard",null],
+["2027-08-05","Wildcard",null],
+["2027-08-06","Wildcard",null],
+["2027-08-07","Wildcard",null],
+["2027-08-08","Wildcard",null],
+["2027-08-09","Wildcard",null],
+["2027-08-10","Wildcard",null],
+["2027-08-11","Wildcard",null],
+["2027-08-12","Wildcard",null],
+["2027-08-13","Wildcard",null],
+["2027-08-14","Wildcard",null]
 
 ];
 
@@ -909,12 +1352,51 @@ const movies = [
    STORAGE
 ========================================================= */
 
-function watchedKey(i) {
-    return "movie_marathon_2027_watched_" + i;
+function customKey(index) {
+
+    return "movie_marathon_custom_" + index;
+
 }
 
-function ratingKey(i) {
-    return "movie_marathon_2027_rating_" + i;
+function watchedKey(index) {
+
+    return "movie_marathon_watched_" + index;
+
+}
+
+function ratingKey(index) {
+
+    return "movie_marathon_rating_" + index;
+
+}
+
+
+/* =========================================================
+   GET MOVIE DATA
+========================================================= */
+
+function getMovie(index) {
+
+    const base =
+        movies[index];
+
+    const custom =
+        localStorage.getItem(
+            customKey(index)
+        );
+
+    if (custom) {
+
+        return JSON.parse(custom);
+
+    }
+
+    return {
+        date: base[0],
+        franchise: base[1],
+        title: base[2]
+    };
+
 }
 
 
@@ -932,47 +1414,67 @@ function playSound(franchise) {
 
         if (!AudioContext) return;
 
-        const ctx = new AudioContext();
+        const ctx =
+            new AudioContext();
+
 
         const sounds = {
 
-            "Star Wars": [110,220,440,880],
+            "Star Wars":
+                [110,220,440,880],
 
-            "Transformers": [90,65,120],
+            "Transformers":
+                [90,65,120],
 
-            "Back to the Future": [220,330,440,660],
+            "Back to the Future":
+                [220,330,440,660],
 
-            "Planet of the Apes": [100,80,65],
+            "Planet of the Apes":
+                [100,80,65],
 
-            "Men in Black": [700,500,800],
+            "Men in Black":
+                [700,500,800],
 
-            "Pirates of the Caribbean": [220,330,440,330],
+            "Pirates of the Caribbean":
+                [220,330,440,330],
 
-            "Pixar": [523,659,784,1046],
+            "Pixar":
+                [523,659,784,1046],
 
-            "MCU": [261,329,392,523],
+            "MCU":
+                [261,329,392,523],
 
-            "Harry Potter": [523,659,784,1046],
+            "Harry Potter":
+                [523,659,784,1046],
 
-            "The Hobbit": [196,247,294,392],
+            "The Hobbit":
+                [196,247,294,392],
 
-            "The Lord of the Rings": [147,196,247,294,392],
+            "The Lord of the Rings":
+                [147,196,247,294,392],
 
-            "Top Gun": [196,247,330,392],
+            "Top Gun":
+                [196,247,330,392],
 
-            "Maze Runner": [140,180,230],
+            "Maze Runner":
+                [140,180,230],
 
-            "The Hunger Games": [220,277,330,440],
+            "The Hunger Games":
+                [220,277,330,440],
 
-            "Twilight": [196,247,294,370],
+            "Twilight":
+                [196,247,294,370],
 
-            "Wildcard": [440,660,880]
+            "Wildcard":
+                [440,660,880]
 
         };
 
+
         const frequencies =
             sounds[franchise] ||
-            sounds["Wildcard"];
+            sounds.Wildcard;
+
 
         frequencies.forEach(
             (frequency,index) => {
@@ -987,31 +1489,41 @@ function playSound(franchise) {
                     ctx.currentTime +
                     index * .10;
 
+
                 oscillator.type =
                     franchise === "Star Wars"
                         ? "sawtooth"
                         : "sine";
 
+
                 oscillator.frequency.value =
                     frequency;
+
 
                 gain.gain.setValueAtTime(
                     .001,
                     start
                 );
 
+
                 gain.gain.exponentialRampToValueAtTime(
                     .12,
                     start + .015
                 );
+
 
                 gain.gain.exponentialRampToValueAtTime(
                     .001,
                     start + .11
                 );
 
+
                 oscillator.connect(gain);
-                gain.connect(ctx.destination);
+
+                gain.connect(
+                    ctx.destination
+                );
+
 
                 oscillator.start(start);
 
@@ -1024,9 +1536,216 @@ function playSound(franchise) {
 
     }
 
-    catch (e) {
-        console.log("Audio unavailable");
+    catch (error) {
+
+        console.log(
+            "Audio unavailable"
+        );
+
     }
+
+}
+
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+let editingIndex = null;
+
+
+function openModal(index) {
+
+    editingIndex = index;
+
+
+    const movie =
+        getMovie(index);
+
+
+    const date =
+        new Date(
+            movie.date +
+            "T00:00:00"
+        );
+
+
+    document.getElementById(
+        "modalTitle"
+    ).textContent =
+        movie.title
+            ? "Edit Movie"
+            : "Add Your Movie";
+
+
+    document.getElementById(
+        "modalDate"
+    ).textContent =
+        date.toLocaleDateString(
+            "en-US",
+            {
+                weekday: "long",
+                day: "numeric",
+                month: "long",
+                year: "numeric"
+            }
+        );
+
+
+    document.getElementById(
+        "movieInput"
+    ).value =
+        movie.title || "";
+
+
+    document.getElementById(
+        "franchiseInput"
+    ).value =
+        movie.franchise || "Wildcard";
+
+
+    document.getElementById(
+        "movieModal"
+    ).classList.add(
+        "show"
+    );
+
+
+    setTimeout(
+        () => {
+
+            document.getElementById(
+                "movieInput"
+            ).focus();
+
+        },
+        50
+    );
+
+}
+
+
+function closeModal() {
+
+    editingIndex = null;
+
+    document.getElementById(
+        "movieModal"
+    ).classList.remove(
+        "show"
+    );
+
+}
+
+
+/* =========================================================
+   SAVE CUSTOM MOVIE
+========================================================= */
+
+function saveCustomMovie() {
+
+    if (
+        editingIndex === null
+    ) {
+        return;
+    }
+
+
+    const title =
+        document.getElementById(
+            "movieInput"
+        ).value.trim();
+
+
+    const franchise =
+        document.getElementById(
+            "franchiseInput"
+        ).value;
+
+
+    if (!title) {
+
+        alert(
+            "Please enter a movie title."
+        );
+
+        return;
+
+    }
+
+
+    const original =
+        movies[editingIndex];
+
+
+    const data = {
+
+        date: original[0],
+
+        franchise:
+            franchise,
+
+        title:
+            title
+
+    };
+
+
+    localStorage.setItem(
+
+        customKey(
+            editingIndex
+        ),
+
+        JSON.stringify(data)
+
+    );
+
+
+    closeModal();
+
+    render();
+
+}
+
+
+/* =========================================================
+   REMOVE CUSTOM MOVIE
+========================================================= */
+
+function removeMovie(index) {
+
+    const movie =
+        getMovie(index);
+
+
+    if (
+        !confirm(
+            `Remove "${movie.title}" from this day?`
+        )
+    ) {
+
+        return;
+
+    }
+
+
+    localStorage.removeItem(
+        customKey(index)
+    );
+
+
+    localStorage.removeItem(
+        watchedKey(index)
+    );
+
+
+    localStorage.removeItem(
+        ratingKey(index)
+    );
+
+
+    render();
 
 }
 
@@ -1038,47 +1757,75 @@ function playSound(franchise) {
 function render() {
 
     const container =
-        document.getElementById("schedule");
+        document.getElementById(
+            "schedule"
+        );
+
 
     container.innerHTML = "";
 
-    let currentMonth = "";
 
-    let monthBlock = null;
+    let currentMonth =
+        "";
 
-    let franchiseBlock = null;
 
-    let currentFranchise = "";
+    let currentFranchise =
+        "";
+
+
+    let monthBlock =
+        null;
+
+
+    let franchiseBlock =
+        null;
 
 
     movies.forEach(
-        (movie,index) => {
+        (_,index) => {
+
+            const movie =
+                getMovie(index);
+
 
             const date =
                 new Date(
-                    movie[0] + "T00:00:00"
+                    movie.date +
+                    "T00:00:00"
                 );
+
 
             const month =
                 date.toLocaleString(
                     "en-US",
                     {
-                        month:"long",
-                        year:"numeric"
+                        month: "long",
+                        year: "numeric"
                     }
                 );
 
 
-            /* NEW MONTH */
+            /* =========================================
+               NEW MONTH
+            ========================================= */
 
-            if (month !== currentMonth) {
+            if (
+                month !== currentMonth
+            ) {
 
-                currentMonth = month;
+                currentMonth =
+                    month;
+
+
+                currentFranchise =
+                    "";
+
 
                 monthBlock =
                     document.createElement(
                         "section"
                     );
+
 
                 monthBlock.className =
                     "month-block";
@@ -1089,6 +1836,7 @@ function render() {
                         "div"
                     );
 
+
                 monthHeader.className =
                     "month-header";
 
@@ -1098,8 +1846,10 @@ function render() {
                         "h2"
                     );
 
+
                 monthName.className =
                     "month-name";
+
 
                 monthName.textContent =
                     month;
@@ -1110,8 +1860,10 @@ function render() {
                         "span"
                     );
 
+
                 monthCount.className =
                     "month-count";
+
 
                 monthCount.textContent =
                     "MOVIE MONTH";
@@ -1121,32 +1873,40 @@ function render() {
                     monthName
                 );
 
+
                 monthHeader.appendChild(
                     monthCount
                 );
+
 
                 monthBlock.appendChild(
                     monthHeader
                 );
 
+
                 container.appendChild(
                     monthBlock
                 );
 
-                currentFranchise = "";
             }
 
 
-            /* NEW FRANCHISE */
+            /* =========================================
+               NEW FRANCHISE
+            ========================================= */
 
-            if (movie[1] !== currentFranchise) {
+            if (
+                movie.franchise !==
+                currentFranchise
+            ) {
 
                 currentFranchise =
-                    movie[1];
+                    movie.franchise;
+
 
                 const style =
                     franchiseStyles[
-                        movie[1]
+                        movie.franchise
                     ] ||
                     franchiseStyles.Wildcard;
 
@@ -1155,6 +1915,7 @@ function render() {
                     document.createElement(
                         "div"
                     );
+
 
                 franchiseBlock.className =
                     "franchise-block";
@@ -1165,15 +1926,18 @@ function render() {
                     style.accent
                 );
 
+
                 franchiseBlock.style.setProperty(
                     "--franchise-bg",
                     style.bg
                 );
 
+
                 franchiseBlock.style.setProperty(
                     "--franchise-accent-soft",
                     style.soft
                 );
+
 
                 franchiseBlock.style.setProperty(
                     "--franchise-border",
@@ -1186,6 +1950,7 @@ function render() {
                         "div"
                     );
 
+
                 franchiseHeader.className =
                     "franchise-header";
 
@@ -1195,8 +1960,10 @@ function render() {
                         "div"
                     );
 
+
                 icon.className =
                     "franchise-icon";
+
 
                 icon.textContent =
                     style.icon;
@@ -1207,11 +1974,13 @@ function render() {
                         "div"
                     );
 
+
                 name.className =
                     "franchise-name";
 
+
                 name.textContent =
-                    movie[1];
+                    movie.franchise;
 
 
                 const count =
@@ -1219,8 +1988,10 @@ function render() {
                         "div"
                     );
 
+
                 count.className =
                     "franchise-films";
+
 
                 count.textContent =
                     "FILMS";
@@ -1230,9 +2001,11 @@ function render() {
                     icon
                 );
 
+
                 franchiseHeader.appendChild(
                     name
                 );
+
 
                 franchiseHeader.appendChild(
                     count
@@ -1243,6 +2016,7 @@ function render() {
                     franchiseHeader
                 );
 
+
                 monthBlock.appendChild(
                     franchiseBlock
                 );
@@ -1250,7 +2024,92 @@ function render() {
             }
 
 
-            /* MOVIE ROW */
+            /* =========================================
+               EMPTY DAY
+            ========================================= */
+
+            if (!movie.title) {
+
+                const empty =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                empty.className =
+                    "empty-movie";
+
+
+                const emptyDate =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                emptyDate.className =
+                    "date";
+
+
+                emptyDate.textContent =
+                    date.toLocaleDateString(
+                        "en-US",
+                        {
+                            weekday: "short",
+                            day: "2-digit",
+                            month: "short"
+                        }
+                    );
+
+
+                const button =
+                    document.createElement(
+                        "button"
+                    );
+
+
+                button.className =
+                    "add-movie-button";
+
+
+                button.innerHTML =
+                    "＋ ADD YOUR MOVIE";
+
+
+                button.onclick =
+                    () =>
+                        openModal(index);
+
+
+                empty.appendChild(
+                    document.createElement(
+                        "div"
+                    )
+                );
+
+
+                empty.appendChild(
+                    emptyDate
+                );
+
+
+                empty.appendChild(
+                    button
+                );
+
+
+                franchiseBlock.appendChild(
+                    empty
+                );
+
+
+                return;
+
+            }
+
+
+            /* =========================================
+               NORMAL MOVIE ROW
+            ========================================= */
 
             const watched =
                 localStorage.getItem(
@@ -1262,6 +2121,7 @@ function render() {
                 document.createElement(
                     "div"
                 );
+
 
             row.className =
                 "movie";
@@ -1281,11 +2141,14 @@ function render() {
                     "input"
                 );
 
+
             checkbox.type =
                 "checkbox";
 
+
             checkbox.className =
                 "checkbox";
+
 
             checkbox.checked =
                 watched;
@@ -1296,16 +2159,18 @@ function render() {
                     "div"
                 );
 
+
             dateElement.className =
                 "date";
+
 
             dateElement.textContent =
                 date.toLocaleDateString(
                     "en-US",
                     {
-                        weekday:"short",
-                        day:"2-digit",
-                        month:"short"
+                        weekday: "short",
+                        day: "2-digit",
+                        month: "short"
                     }
                 );
 
@@ -1315,11 +2180,23 @@ function render() {
                     "div"
                 );
 
+
             title.className =
                 "movie-title";
 
+
             title.textContent =
-                movie[2];
+                movie.title;
+
+
+            const actions =
+                document.createElement(
+                    "div"
+                );
+
+
+            actions.className =
+                "movie-actions";
 
 
             const rating =
@@ -1327,28 +2204,96 @@ function render() {
                     "input"
                 );
 
+
             rating.type =
                 "number";
+
 
             rating.className =
                 "rating";
 
+
             rating.min =
                 "0";
+
 
             rating.max =
                 "10";
 
+
             rating.step =
                 ".1";
 
+
             rating.placeholder =
                 "/10";
+
 
             rating.value =
                 localStorage.getItem(
                     ratingKey(index)
                 ) || "";
+
+
+            const edit =
+                document.createElement(
+                    "button"
+                );
+
+
+            edit.className =
+                "action-button";
+
+
+            edit.title =
+                "Edit movie";
+
+
+            edit.textContent =
+                "✏️";
+
+
+            edit.onclick =
+                () =>
+                    openModal(index);
+
+
+            const remove =
+                document.createElement(
+                    "button"
+                );
+
+
+            remove.className =
+                "action-button";
+
+
+            remove.title =
+                "Remove movie";
+
+
+            remove.textContent =
+                "🗑️";
+
+
+            remove.onclick =
+                () =>
+                    removeMovie(index);
+
+
+            actions.appendChild(
+                rating
+            );
+
+
+            actions.appendChild(
+                edit
+            );
+
+
+            actions.appendChild(
+                remove
+            );
 
 
             /* CHECKBOX */
@@ -1357,15 +2302,18 @@ function render() {
                 "change",
                 function() {
 
-                    if (this.checked) {
+                    if (
+                        this.checked
+                    ) {
 
                         localStorage.setItem(
                             watchedKey(index),
                             "true"
                         );
 
+
                         playSound(
-                            movie[1]
+                            movie.franchise
                         );
 
                     }
@@ -1377,6 +2325,7 @@ function render() {
                         );
 
                     }
+
 
                     render();
 
@@ -1409,6 +2358,7 @@ function render() {
 
                     }
 
+
                     updateStats();
 
                 }
@@ -1419,16 +2369,19 @@ function render() {
                 checkbox
             );
 
+
             row.appendChild(
                 dateElement
             );
+
 
             row.appendChild(
                 title
             );
 
+
             row.appendChild(
-                rating
+                actions
             );
 
 
@@ -1451,9 +2404,12 @@ function render() {
 
 function updateStats() {
 
-    let watched = 0;
+    let watched =
+        0;
 
-    const ratings = [];
+
+    const ratings =
+        [];
 
 
     movies.forEach(
@@ -1478,7 +2434,9 @@ function updateStats() {
                 );
 
 
-            if (!isNaN(rating)) {
+            if (
+                !isNaN(rating)
+            ) {
 
                 ratings.push(
                     rating
@@ -1496,7 +2454,9 @@ function updateStats() {
 
     const percent =
         Math.round(
-            watched / total * 100
+            watched /
+            total *
+            100
         );
 
 
@@ -1504,18 +2464,24 @@ function updateStats() {
         "—";
 
 
-    if (ratings.length) {
+    if (
+        ratings.length
+    ) {
 
         const sum =
             ratings.reduce(
-                (a,b) => a + b,
+                (a,b) =>
+                    a + b,
                 0
             );
 
+
         average =
             (
-                sum / ratings.length
-            ).toFixed(1) +
+                sum /
+                ratings.length
+            ).toFixed(1)
+            +
             " / 10";
 
     }
@@ -1524,13 +2490,16 @@ function updateStats() {
     document.getElementById(
         "watched"
     ).textContent =
-        watched + " / " + total;
+        watched +
+        " / " +
+        total;
 
 
     document.getElementById(
         "percentage"
     ).textContent =
-        percent + "%";
+        percent +
+        "%";
 
 
     document.getElementById(
@@ -1542,13 +2511,16 @@ function updateStats() {
     document.getElementById(
         "progressText"
     ).textContent =
-        watched + " / " + total;
+        watched +
+        " / " +
+        total;
 
 
     document.getElementById(
         "progressBar"
     ).style.width =
-        percent + "%";
+        percent +
+        "%";
 
 }
 
@@ -1564,7 +2536,9 @@ function resetProgress() {
             "Reset your entire 2027 movie marathon?"
         )
     ) {
+
         return;
+
     }
 
 
@@ -1575,8 +2549,14 @@ function resetProgress() {
                 watchedKey(index)
             );
 
+
             localStorage.removeItem(
                 ratingKey(index)
+            );
+
+
+            localStorage.removeItem(
+                customKey(index)
             );
 
         }
@@ -1586,6 +2566,54 @@ function resetProgress() {
     render();
 
 }
+
+
+/* =========================================================
+   MODAL EVENTS
+========================================================= */
+
+document.getElementById(
+    "movieModal"
+).addEventListener(
+    "click",
+    function(event) {
+
+        if (
+            event.target === this
+        ) {
+
+            closeModal();
+
+        }
+
+    }
+);
+
+
+document.getElementById(
+    "movieInput"
+).addEventListener(
+    "keydown",
+    function(event) {
+
+        if (
+            event.key === "Enter"
+        ) {
+
+            saveCustomMovie();
+
+        }
+
+        if (
+            event.key === "Escape"
+        ) {
+
+            closeModal();
+
+        }
+
+    }
+);
 
 
 /* =========================================================
