@@ -540,7 +540,7 @@ main {
 
 
 /* =========================================================
-   ADD MOVIE MODAL
+   MODAL
 ========================================================= */
 
 .modal {
@@ -987,6 +987,10 @@ footer {
                 ⚔️ Star Wars
             </option>
 
+            <option value="How to Train Your Dragon">
+                🐉 How to Train Your Dragon
+            </option>
+
             <option value="Harry Potter">
                 ⚡ Harry Potter
             </option>
@@ -1116,6 +1120,14 @@ const franchiseStyles = {
         border: "rgba(255,226,122,.35)"
     },
 
+    "How to Train Your Dragon": {
+        icon: "🐉",
+        accent: "#61c7e8",
+        bg: "rgba(15,55,75,.52)",
+        soft: "rgba(97,199,232,.12)",
+        border: "rgba(97,199,232,.35)"
+    },
+
     "Harry Potter": {
         icon: "⚡",
         accent: "#c9a34e",
@@ -1189,7 +1201,9 @@ const franchiseStyles = {
 
 const movies = [
 
-/* APRIL */
+/* =========================
+   APRIL
+========================= */
 
 ["2027-04-14","Back to the Future","Back to the Future"],
 ["2027-04-15","Back to the Future","Back to the Future Part II"],
@@ -1210,10 +1224,12 @@ const movies = [
 
 ["2027-04-28","Men in Black","Men in Black"],
 ["2027-04-29","Men in Black","Men in Black II"],
-["2027-04-30","Men in Black","Men in Black 3"],
+["2027-04-30","Men in Black 3","Men in Black 3"],
 
 
-/* MAY */
+/* =========================
+   MAY
+========================= */
 
 ["2027-05-01","Pirates of the Caribbean","The Curse of the Black Pearl"],
 ["2027-05-02","Pirates of the Caribbean","Dead Man's Chest"],
@@ -1250,7 +1266,9 @@ const movies = [
 ["2027-05-31","MCU","Ant-Man"],
 
 
-/* JUNE */
+/* =========================
+   JUNE
+========================= */
 
 ["2027-06-01","MCU","Captain America: Civil War"],
 ["2027-06-02","MCU","Doctor Strange"],
@@ -1276,9 +1294,10 @@ const movies = [
 ["2027-06-21","Star Wars","The Last Jedi"],
 ["2027-06-22","Star Wars","The Rise of Skywalker"],
 
-["2027-06-23","Wildcard",null],
-["2027-06-24","Wildcard",null],
-["2027-06-25","Wildcard",null],
+["2027-06-23","How to Train Your Dragon","How to Train Your Dragon"],
+["2027-06-24","How to Train Your Dragon","How to Train Your Dragon 2"],
+["2027-06-25","How to Train Your Dragon","How to Train Your Dragon: The Hidden World"],
+
 ["2027-06-26","Wildcard",null],
 ["2027-06-27","Wildcard",null],
 ["2027-06-28","Wildcard",null],
@@ -1286,7 +1305,9 @@ const movies = [
 ["2027-06-30","Wildcard",null],
 
 
-/* JULY */
+/* =========================
+   JULY
+========================= */
 
 ["2027-07-01","Harry Potter","Harry Potter and the Philosopher's Stone"],
 ["2027-07-02","Harry Potter","Harry Potter and the Chamber of Secrets"],
@@ -1328,7 +1349,9 @@ const movies = [
 ["2027-07-31","Wildcard",null],
 
 
-/* AUGUST */
+/* =========================
+   AUGUST
+========================= */
 
 ["2027-08-01","Wildcard",null],
 ["2027-08-02","Wildcard",null],
@@ -1353,32 +1376,25 @@ const movies = [
 ========================================================= */
 
 function customKey(index) {
-
     return "movie_marathon_custom_" + index;
-
 }
 
 function watchedKey(index) {
-
     return "movie_marathon_watched_" + index;
-
 }
 
 function ratingKey(index) {
-
     return "movie_marathon_rating_" + index;
-
 }
 
 
 /* =========================================================
-   GET MOVIE DATA
+   GET MOVIE
 ========================================================= */
 
 function getMovie(index) {
 
-    const base =
-        movies[index];
+    const base = movies[index];
 
     const custom =
         localStorage.getItem(
@@ -1386,9 +1402,7 @@ function getMovie(index) {
         );
 
     if (custom) {
-
         return JSON.parse(custom);
-
     }
 
     return {
@@ -1396,12 +1410,11 @@ function getMovie(index) {
         franchise: base[1],
         title: base[2]
     };
-
 }
 
 
 /* =========================================================
-   SOUND
+   SOUND EFFECTS
 ========================================================= */
 
 function playSound(franchise) {
@@ -1414,8 +1427,7 @@ function playSound(franchise) {
 
         if (!AudioContext) return;
 
-        const ctx =
-            new AudioContext();
+        const ctx = new AudioContext();
 
 
         const sounds = {
@@ -1443,6 +1455,12 @@ function playSound(franchise) {
 
             "MCU":
                 [261,329,392,523],
+
+            "Star Wars":
+                [110,220,440,880],
+
+            "How to Train Your Dragon":
+                [196,247,294,392,494],
 
             "Harry Potter":
                 [523,659,784,1046],
@@ -1558,10 +1576,8 @@ function openModal(index) {
 
     editingIndex = index;
 
-
     const movie =
         getMovie(index);
-
 
     const date =
         new Date(
@@ -1682,11 +1698,9 @@ function saveCustomMovie() {
 
         date: original[0],
 
-        franchise:
-            franchise,
+        franchise: franchise,
 
-        title:
-            title
+        title: title
 
     };
 
@@ -1710,7 +1724,7 @@ function saveCustomMovie() {
 
 
 /* =========================================================
-   REMOVE CUSTOM MOVIE
+   REMOVE MOVIE
 ========================================================= */
 
 function removeMovie(index) {
@@ -1724,9 +1738,7 @@ function removeMovie(index) {
             `Remove "${movie.title}" from this day?`
         )
     ) {
-
         return;
-
     }
 
 
@@ -1734,11 +1746,9 @@ function removeMovie(index) {
         customKey(index)
     );
 
-
     localStorage.removeItem(
         watchedKey(index)
     );
-
 
     localStorage.removeItem(
         ratingKey(index)
@@ -1765,20 +1775,13 @@ function render() {
     container.innerHTML = "";
 
 
-    let currentMonth =
-        "";
+    let currentMonth = "";
 
+    let currentFranchise = "";
 
-    let currentFranchise =
-        "";
+    let monthBlock = null;
 
-
-    let monthBlock =
-        null;
-
-
-    let franchiseBlock =
-        null;
+    let franchiseBlock = null;
 
 
     movies.forEach(
@@ -1805,9 +1808,7 @@ function render() {
                 );
 
 
-            /* =========================================
-               NEW MONTH
-            ========================================= */
+            /* MONTH */
 
             if (
                 month !== currentMonth
@@ -1815,7 +1816,6 @@ function render() {
 
                 currentMonth =
                     month;
-
 
                 currentFranchise =
                     "";
@@ -1891,9 +1891,7 @@ function render() {
             }
 
 
-            /* =========================================
-               NEW FRANCHISE
-            ========================================= */
+            /* FRANCHISE */
 
             if (
                 movie.franchise !==
@@ -2024,9 +2022,7 @@ function render() {
             }
 
 
-            /* =========================================
-               EMPTY DAY
-            ========================================= */
+            /* EMPTY DAY */
 
             if (!movie.title) {
 
@@ -2107,9 +2103,7 @@ function render() {
             }
 
 
-            /* =========================================
-               NORMAL MOVIE ROW
-            ========================================= */
+            /* MOVIE */
 
             const watched =
                 localStorage.getItem(
@@ -2285,11 +2279,9 @@ function render() {
                 rating
             );
 
-
             actions.appendChild(
                 edit
             );
-
 
             actions.appendChild(
                 remove
@@ -2369,16 +2361,13 @@ function render() {
                 checkbox
             );
 
-
             row.appendChild(
                 dateElement
             );
 
-
             row.appendChild(
                 title
             );
-
 
             row.appendChild(
                 actions
@@ -2404,12 +2393,9 @@ function render() {
 
 function updateStats() {
 
-    let watched =
-        0;
+    let watched = 0;
 
-
-    const ratings =
-        [];
+    const ratings = [];
 
 
     movies.forEach(
@@ -2536,9 +2522,7 @@ function resetProgress() {
             "Reset your entire 2027 movie marathon?"
         )
     ) {
-
         return;
-
     }
 
 
@@ -2549,11 +2533,9 @@ function resetProgress() {
                 watchedKey(index)
             );
 
-
             localStorage.removeItem(
                 ratingKey(index)
             );
-
 
             localStorage.removeItem(
                 customKey(index)
